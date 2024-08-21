@@ -1,0 +1,47 @@
+.propertiesContainer{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+
+
+}
+.textBlock{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.singleWord{
+    display: flex;
+ 
+    align-items: center;
+    justify-content: center;
+}
+.fourWords{
+    width: 50%;
+    text-align: center;
+    font-size: 40px;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.boxContainer {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+
+
+@media (max-width:480px) {
+    .fourWords {
+        width: 70%;
+        
+  }
+}

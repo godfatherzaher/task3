@@ -1,0 +1,252 @@
+.featureContainer {
+    position: relative; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+    gap: 30px;
+    overflow: hidden;
+  }
+  
+  .featureImageWrapper {
+    position: relative; 
+    flex: 1;
+
+  
+    
+  }
+  
+  .featureTitle {
+    color: var(--secondary-color);
+    font-size: 32px;
+    font-weight:bolder;
+    width: 70%;
+    margin-bottom: 15px;
+    margin: 10px 0 ;
+  }
+  
+  .featureImage {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  
+  }
+  
+  .featureIcon {
+    position: absolute;
+    bottom: 0px; 
+    left: -30px; 
+    width: 70px;
+    height: 70px; 
+    background-color: var(--primary-color); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+  }
+  
+  .featureIcon img {
+    width: 55%; 
+    height: 55%;
+    object-fit: cover; 
+  }
+  
+  /* نصوص */
+  
+ 
+
+  .featureContent {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  
+
+  
+  .featureSubheading {
+    color: var(--primary-color);
+
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .featureDescription {
+    font-size: 16px;
+    color: var(--secondary-color);
+    font-weight: 400;
+
+  }
+  .highlightOne{
+    font-weight: bold;
+  }
+  .highlightTwo{
+    color: #2f88f5;
+ 
+  }
+
+
+  .featureQuestionOne {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .featureQuestionTwo {
+    font-size: 18px;
+    font-weight: normal;
+
+    
+  }
+
+
+  .featureList {
+    flex: 1;
+    list-style-type: none;
+    padding: 20px; 
+    position: relative;
+    background-color: #fff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); 
+}
+  
+  .featureListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%; 
+  }
+
+
+
+  
+  .featureItemIcon img {
+    display: flex;
+    flex-direction: column;
+    width: 50px; 
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .featureItemIcon span{
+    font-size: 15px; 
+    color: #666;
+  }
+  .featureDetails {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-bottom: 20px; 
+  }
+
+  .featureMeasurement {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: var(--secondary-color); 
+    margin: 0; 
+  }
+  
+  
+  
+  .featureText {
+    font-size: 15px; 
+    color: #666; 
+  }
+  
+
+  @media (min-width: 834px) and (max-width: 960px) {
+    .featureContent {
+        flex: 1;
+    }
+
+    .featureTitle {
+      margin-bottom: 5px;
+  }
+
+    
+
+    .featureSubheading {
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .featureQuestionOne {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .featureListItem {
+        margin-bottom: 15px;
+    }
+
+    .featureItemIcon img {
+        margin-right: 20px;
+        margin-bottom: 2px;
+    }
+
+    .featureItemIcon span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .featureContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .featureContainer {
+        align-items: start;
+    }
+
+  
+    .featureContent {
+      flex: 1;
+  }
+    .featureTitle {
+      font-size: 24px;
+      width: 100%;
+  }
+
+    .featureSubheading,
+    .featureDescription {
+        font-size: 16px;
+    }
+
+    .featureMeasurement {
+        font-size: 20px;
+    }
+
+    .featureText {
+        font-size: 14px;
+    }
+
+    .featureIcon {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        left: -20px;
+    }
+
+    .featureIcon img {
+        width: 60%;
+        height: 60%;
+    }
+      .featureList {
+        padding: 10px 20px; 
+        max-width: 90%;
+    }
+}

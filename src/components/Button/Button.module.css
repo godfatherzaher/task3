@@ -1,0 +1,64 @@
+.scheduleBtn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    padding-left: 40px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 40px; 
+    cursor: pointer;
+    position: relative;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    position: absolute; 
+    border-radius: 50%; 
+    left: -10px;
+    top: -2px;
+    width: 41px; 
+    height: 41px; 
+    margin-right: 10px; 
+}
+
+
+.CalendarIcon {
+    color: white; 
+    font-size: 14px; 
+}
+
+.noIcon {
+    padding-left: 20px;
+}
+@media (max-width: 768px) {
+
+    .scheduleBtn {
+        padding: 6px 14px; 
+        font-size: 14px;
+    }
+
+    .iconContainer {
+        width: 32px; 
+        height: 32px;
+        left: -19px;
+    }
+}
+
+
+@media (max-width: 834px  ) and (min-width: 768px){
+
+
+    .scheduleBtn {
+        padding: 6px 14px; 
+        font-size: 14px;
+    }
+
+    .iconContainer {
+        width: 32px; 
+        height: 32px;
+        left: -19px;
+    }
+}

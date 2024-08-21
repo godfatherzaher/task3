@@ -1,0 +1,97 @@
+.boxContainer {
+    padding: 20px 35px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imagContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    align-items: center;
+    text-align: center;
+    gap: 80px;
+    white-space: nowrap;
+  }
+  
+  .price p {
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fbd9cf;
+    padding: 10px 15px;
+    border-radius: 7px;
+    
+  }
+  
+  .price h3 {
+    font-size: 24px;
+    color:var(--primary-color);
+  }
+  
+  .location {
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--secondary-color);
+    text-align: center;
+  }
+  
+  .details {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 10px;
+   margin: 0 auto;
+   margin-left: 10px;
+    color: #4c4c4c;
+    text-align: start;
+    padding-bottom: 15px; 
+    border-bottom: 1px solid rgb(176, 176, 176);
+  }
+  
+  .details p, .details span {
+    font-size: 16px;
+    flex: 1 1 45%; /* عرض العنصر يكون 45% من العرض الكلي لضمان وجود مسافة بينهما */
+    max-width: 45%; /* تأكيد عدم تجاوز العرض 45% */
+}
+
+
+  .details span{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    
+  }
+
+  .button{
+    margin-top: 20px;
+    
+  }
+
+
+  @media (max-width:480px) {
+  
+    .details{
+        gap: 0px;
+    }
+  .details p, .details span {
+    font-size: 16px;
+ 
+
+    flex: 1 1 20%; /* عرض العنصر يكون 45% من العرض الكلي لضمان وجود مسافة بينهما */
+    max-width: 30%; /* تأكيد عدم تجاوز العرض 45% */
+}
+
+}
