@@ -15,6 +15,7 @@
 .textBlock {
   text-align: left;
   max-width: 55%;
+
   margin: 0 auto;
 }
 
@@ -23,26 +24,25 @@
   text-transform: capitalize;
   font-weight: bolder;
   max-width: 100%; 
+
 }
 
 .rectanglesContainer {
   display: flex;
+
   gap: 30px;
   margin: 0 auto;
   width: 35%;
   height: 60px;
   white-space: nowrap;
   align-items: center;
-  color: #fff;
+ 
 }
 
-.rectanglesContainer > .rectangle:first-child {
-  background-color: var(--primary-color);
-  border: 2px solid #ccc;
-}
+
 
 .rectangle {
-  display: inline-block;
+  color: #fff;
   padding: 10px 20px;
   background-color: var(--secondary-color);
   border-radius: 5px;
@@ -50,71 +50,19 @@
   font-weight: bold;
   background-size: cover;
   box-sizing: border-box; 
-}
-
-.tableContainer {
-  width: 29%;
-  padding: 25px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-sizing: border-box;
-}
-
-.tableContainer .tableParent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10px;
-}
-
-.tableParent p {
-  color: grey;
-}
-
-.tableParent .size {
-  font-weight: bolder;
-  font-size: 27px;
-}
-
-.imageContainer {
-  width: 30%;
-  text-align: center;
-}
-
-.image {
-  width: 100%; /* استخدام عرض 100% */
-  height: auto;
-}
-
-.textContainer {
-  width: 25%;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: start;
-}
-
-.textContainer h4 {
-  font-size: 20px;
-}
-
-.textContainer p {
-  width: 80%;
-  color: gray;
-}
-
-.textContainer .textOne {
-  margin: 30px 0;
-}
-
-.textContainer .textTwo {
-  margin-bottom: 25px;
-}
-
-.button {
-  border: none;
+  border:none;
+  cursor: pointer;
 }
 
 
+.rectangle:hover {
+  background-color: var(--primary-color);
+
+}
+.rectangle.selected {
+  background-color: var(--primary-color);
+
+}
 @media (max-width: 1171px) {
   .rectanglesContainer {
     max-width: 40%;
@@ -147,18 +95,9 @@
     display: flex;
   }
 
-  .tableContainer {
-    width: 90%;
-  }
 
-  .imageContainer {
-    width: 60%;
-    text-align: center;
-  }
 
-  .textContainer {
-    width: 90%;
-  }
+  
 
   .fourWords {
     width: 100%;
@@ -188,11 +127,7 @@
     box-sizing: border-box;
   }
 
-  .imageContainer {
-    width: 100%;
-    text-align: center;
-  }
-
+ 
   .fourWords {
     font-size: 24px;
     width: 100%;

@@ -1,0 +1,117 @@
+
+  
+  .tableContainer {
+    width: 29%;
+    padding: 25px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .tableContainer .tableParent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  
+  .tableParent p {
+    color: grey;
+  }
+  
+  .tableParent .size {
+    font-weight: bolder;
+    font-size: 27px;
+  }
+  
+  .imageContainer {
+    width: 30%;
+    text-align: center;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .textContainer {
+    width: 25%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: start;
+  }
+  
+  .textContainer h4 {
+    font-size: 20px;
+  
+  }
+  
+  .textContainer p {
+    width: 80%;
+    color: gray;
+  }
+  
+  .textContainer .textOne {
+    margin: 30px 0;
+  }
+  
+  .textContainer .textTwo {
+    margin-bottom: 25px;
+  }
+  
+  .button {
+    border: none;
+  }
+  
+
+  
+  @media (max-width: 1024px) {
+    .dealContainer {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  
+
+  
+    .tableContainer {
+      width: 90%;
+    }
+  
+    .imageContainer {
+      width: 60%;
+      text-align: center;
+    }
+  
+    .textContainer {
+      width: 90%;
+    }
+
+  }
+  
+  @media (max-width: 769px) {
+
+  
+
+  }
+  
+  @media (max-width: 480px) {
+
+
+    .tableParent .size {
+      font-size: 20px;
+    }
+  
+    .imageContainer {
+      width: 100%;
+      text-align: center;
+    }
+
+  
+    .fourWords {
+      font-size: 24px;
+      width: 100%;
+    }
+  
+
+  }
+  

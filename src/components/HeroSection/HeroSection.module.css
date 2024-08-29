@@ -1,0 +1,41 @@
+/* HeroSection.module.css */
+.heroContainer {
+    position: relative;
+    height: 300px; 
+    background-image: url('/assets/images/page-heading-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .textContainer {
+    padding: 20px;
+   
+    text-transform: uppercase; 
+  }
+  
+  .heroText {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: white; 
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 1rem 2rem;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  
+    
+  }
+  .subText{ 
+
+    margin: 0;
+    font-size:3rem;
+
+  }
+  
+

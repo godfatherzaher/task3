@@ -1,70 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Deal.module.css';
 import InfoSection from '../InfoSection/InfoSection';
-import Button from '../Button/Button';
+import DealDetail from '../DealDetail/DealDetail'; 
 
 const Deal = () => {
+  const [selectedDeal, setSelectedDeal] = useState('Appartment');
+
+  const deals = {
+    'Appartment': {
+      space: '185 m2',
+      floor: '26th',
+      rooms: '4',
+      parking: 'Yes',
+      payment: 'Bank',
+      imageSrc: '/assets/images/deal-01.jpg',
+      extraInfoTitle: 'Extra Info About Appartment',
+      extraInfoTextOne: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. do eiumod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse',
+      extraInfoTextTwo: 'When you need free CSS templates you can simply typeTemplateMo in any search engine website. in addition, you can type Templateo Protfolio, TemplateMo One page Layouts,ets.',
+    },
+    'Villa House': {
+      space: '250 m2',
+      floor: '26nd',
+      rooms: '5',
+      parking: 'Yes',
+      payment: 'Bank',
+      imageSrc: '/assets/images/deal-02.jpg',
+      extraInfoTitle: 'Detail Info About Villa ',
+      extraInfoTextOne: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. do eiumod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse',
+      extraInfoTextTwo: 'Swag fanny pack lyft blog twee JOMO rthical copper mug, succulents typewriter shaman DIY kitsch twee taikaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.',
+    },
+    'Penthouse': {
+      space: '320 m2',
+      floor: '34th',
+      rooms: '6',
+      parking: 'Yes',
+      payment: 'Bank',
+      imageSrc: '/assets/images/deal-03.jpg', 
+      extraInfoTitle: 'Extra Info About Penthouse',
+      extraInfoTextOne: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. do eiumod tempor pack incididunt ut labore et dolore magna aliqua quised ipsum suspendisse',
+      extraInfoTextTwo: 'Swag fanny pack lyft blog twee JOMO rthical copper mug, succulents typewriter shaman DIY kitsch twee taikaki fixie hella venmo after messenger poutine next level humblebrag swag franzen.',
+    }
+  };
+
+  
   return (
     <div className={styles.dealContainer}>
-    
-      <div className={styles.textBlock}>
+      <div className={styles.textBlock} id="property-details">
         <p className={styles.singleWord}>
-            <InfoSection
-            subtitle="Dest Deal"
-            />
+          <InfoSection subtitle="Dest Deal" />
         </p>
-        <h1 className={styles.fourWords}>find your best deal right now!</h1>
+        <h1 className={styles.fourWords}>Find your best deal right now!</h1>
       </div>
 
-    
       <div className={styles.rectanglesContainer}>
-        <div className={styles.rectangle}>Appartment</div>
-        <div className={styles.rectangle}>Villa House </div>
-        <div className={styles.rectangle}>Penthouse</div>
+        {Object.keys(deals).map((dealType) => (
+          <button 
+            key={dealType}
+            className={`${styles.rectangle} ${selectedDeal === dealType ? styles.selected : ''}`}
+            onClick={() => setSelectedDeal(dealType)}
+            
+          >
+            {dealType}
+          </button>
+        ))}
       </div>
 
-     
-      <div className={styles.tableContainer}>
-        <div className={styles.tableParent}>
-            <p>Total flate space</p>
-            <div className={styles.size}>185 m2</div>
-        </div>
-        <div className={styles.tableParent}>
-            <p>Floor number</p>
-            <div className={styles.size}>26th</div>
-        </div>
-        <div className={styles.tableParent}>
-            <p>Number of rooms</p>
-            <div className={styles.size}>4</div>
-        </div>
-        <div className={styles.tableParent}>
-            <p>Parking Available</p>
-            <div className={styles.size}>Yes</div>
-        </div>
-        <div className={styles.tableParent}>
-            <p>Payment Process</p>
-            <div className={styles.size}>Bank</div>
-        </div>
-      </div>
+      <DealDetail {...deals[selectedDeal]} />
 
-    
-      <div className={styles.imageContainer}>
-        <img src="/assets/images/property-05.jpg" alt="Deal Image" className={styles.image} />
-      </div>
-
-
-      <div className={styles.textContainer}>
-        <h4>Extra Info About Property</h4>
-        <p className={styles.textOne}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. do eiumod tempor pack incididunt ut labore et dolore magna 
-            aliqua quised ipsum suspendisse
-         </p>
-        <p className={styles.textTwo}>When you need free CSS templates you can simply typeTemplateMo in any search engine website. in addition, you can type Templateo 
-            Protfolio, TemplateMo One page Layouts,ets.
-         </p>
-        <button className={styles.button}>
-          <Button/>
-        </button>
-      </div>
+      
     </div>
   );
 };

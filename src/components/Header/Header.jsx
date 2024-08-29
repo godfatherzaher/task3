@@ -3,6 +3,7 @@ import styles from './Header.module.css';
 import { FaCalendar , FaBars  } from "react-icons/fa";
 import { useState } from 'react';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,10 +22,10 @@ const Header = () => {
       </div>
       <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ''}`} aria-label="Main navigation">
          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/properties">Properties</a></li>
-            <li><a href="/property-details">Property Details</a></li>
-            <li><a href="/contact-us">Contact Us</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/properties">Properties</Link></li>
+            <li><Link to="/property-details">Property Details</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
          </ul>
         <Button/>
       </nav>

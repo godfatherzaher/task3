@@ -1,9 +1,43 @@
 import React from 'react';
 import styles from './Feature.module.css';
 import InfoSection from '../InfoSection/InfoSection';
+import FeatureList from '../FeatureList/FeatureList';
 
 const Feature = () => {
+
+  const featureData = [
+    {
+      iconSrc: '/assets/images/info-icon-01.png',
+      iconAlt: 'Flat Space',
+      measurement: '250 m2',
+      text: 'Total Flat space'
+    },
+    {
+      iconSrc: '/assets/images/info-icon-02.png',
+      iconAlt: 'Contract Ready',
+      measurement: 'Contract',
+      text: 'Contract Ready'
+    },
+    {
+      iconSrc: '/assets/images/info-icon-03.png',
+      iconAlt: 'Payment',
+      measurement: 'Payment',
+      text: 'Payment',
+      iconText: 'Process'
+    },
+    {
+      iconSrc: '/assets/images/info-icon-04.png',
+      iconAlt: 'Safety',
+      measurement: 'Safety',
+      text: '24/7 Under',
+      iconText: 'Control'
+    }
+  ];
+
+
+
   return (
+    
     <div className={styles.featureContainer}>
       <div className={styles.featureImageWrapper}>
          <img src="/assets/images/featured.jpg" alt="Feature Image" className={styles.featureImage} />
@@ -25,51 +59,7 @@ const Feature = () => {
         <p className={styles.featureQuestionOne}>How does this work?</p>
         <p className={styles.featureQuestionTwo}>Why is Villa Agency the best?</p>
       </div>
-      <div className={styles.featureList}>
-        <ul >
-            <li className={styles.featureListItem}>
-                <div className={styles.featureItemIcon}>
-                  <img src="/assets/images/info-icon-01.png" alt="" />
-                </div>
-                <div className={styles.featureDetails}>
-                   <h4 className={styles.featureMeasurement}>250 m2</h4>
-                  <span className={styles.featureText}>Total Flat space</span>
-                </div>
-            </li>
-            <li className={styles.featureListItem}>
-                <div className={styles.featureItemIcon}>
-                  <img src="/assets/images/info-icon-02.png" alt="" />
-                </div>
-                <div className={styles.featureDetails}>
-                    <h4 className={styles.featureMeasurement}>Contract</h4>
-                   <span className={styles.featureText}>Contract Ready</span>
-                </div>
-                
-            </li>
-            <li className={styles.featureListItem}>
-                 <div className={styles.featureItemIcon}>
-                  <img src="/assets/images/info-icon-03.png" alt="" />
-                  <span>Process</span>
-                 </div>
-                 <div className={styles.featureDetails}>
-                     <h4 className={styles.featureMeasurement}>Payment</h4>
-                     <span className={styles.featureText}>Payment</span>
-                 </div>
-                
-            </li>
-            <li className={styles.featureListItem}>
-                 <div className={styles.featureItemIcon}>
-                  <img src="/assets/images/info-icon-04.png" alt="" />
-                  <span>Control</span>
-                 </div>
-                 <div className={styles.featureDetails}>
-                   <h4  className={styles.featureMeasurement}>Safety</h4>
-                   <span className={styles.featureText}>24/7 Under</span>
-                 </div>
-                
-            </li>
-        </ul>
-      </div>
+      <FeatureList features={featureData} />
       
     </div>
   );

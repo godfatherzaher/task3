@@ -37,11 +37,141 @@
     justify-content: space-between;
   }
 
+  .rectanglesContainer {
+    display: flex;
+    gap: 30px;
+    margin: 0 auto;
+    width: 100%;
 
-
-@media (max-width:480px) {
-    .fourWords {
-        width: 70%;
-        
+    max-width: 600px; 
+    height: auto; 
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
   }
-}
+  
+  .rectangle {
+    display: flex;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    background-size: cover;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    width: auto; 
+  }
+  
+  .rectangle.active{
+    background-color: var(--primary-color);
+  }
+  
+
+  
+
+  .navigationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .dotsContainer {
+    display: flex;
+    gap: 10px;
+
+  }
+  
+  .circleButton {
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+
+  .circleButton.active {
+    background-color: var(--primary-color);
+  }
+
+  .arrowButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 10px; 
+    background-color: var(--secondary-color); 
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white; 
+  }
+
+
+
+
+
+
+
+
+  @media (max-width: 1171px) {
+    .rectanglesContainer {
+      max-width: 80%; 
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .rectanglesContainer {
+      margin: 30px 0;
+      width: 100%; 
+      justify-content: center; 
+      flex-wrap: wrap; 
+    }
+  }
+  
+  @media (max-width: 769px) {
+    .fourWords {
+      font-size: 32px;
+    }
+  
+    .rectanglesContainer {
+      gap: 15px;
+      width: 100%;
+    }
+  
+    .rectangle {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fourWords {
+      width: 70%;
+    }
+  
+    .rectanglesContainer {
+      width: 100%;
+      justify-content: center
+      
+    }
+  
+    .rectangle {
+      justify-content: center;
+      width: 40%;
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+   
+  }
+  

@@ -1,0 +1,133 @@
+.singlePropertyContainer {
+  padding: 50px 50px 0 50px;
+
+}
+
+.singlePropertyHead {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.singlePropertyHead .featureImageWrapper {
+  width: 47%;
+  padding: 0; 
+  margin: 0; 
+}
+
+.singlePropertyHead .featureImageWrapper img {
+  width: 100%;
+  height: 100%;
+  display: block; 
+  object-fit: cover; 
+}
+
+.singlePropertyHead .singlePropertyFeature {
+  width: 25%;
+  transform: translateY(33px);
+}
+
+
+.singlePropertyContentOne .details .type{
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fbd9cf;
+    padding: 5px 15px;
+    border-radius: 7px;
+  width: fit-content;    
+
+}
+
+.singlePropertyContentTwo{
+  width: 47%;
+  color: #333;
+  line-height: 1.8rem;
+  padding: 20px;
+}
+.singlePropertyFirstDescription,.singlePropertySecondDescription{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+
+}
+
+.singlePropertyContentTwo .highlightOne{
+  font-weight: bold;
+}
+.singlePropertyContentTwo .highlightTwo{
+  color: #2f88f5;
+
+}
+.highlightThree{
+  color: var(--pirmary-color);
+}
+.highlightFour{
+  color: palevioletred;
+}
+.singlePropertySecondDescription{
+  margin: 50px auto;
+}
+
+
+.singlePropertyThirdDescription{
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  
+}
+
+.singlePropertyQuestionOne ,.singlePropertyQuestionTwo{
+  font-weight: bold;
+
+}
+.singlePropertyQuestionOne{
+  margin: 20px auto;
+  
+}
+
+@media (min-width: 991px ) and ( max-width: 1171px) {
+  .singlePropertyHead .singlePropertyFeature {
+    width: 30% 
+  }
+}
+@media (max-width: 991px) {
+
+  .singlePropertyHead {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .singlePropertyHead .featureImageWrapper{
+    width: 70%;
+  }
+  .singlePropertyFeature {
+    min-width: 70%;
+
+  }
+
+
+  .singlePropertyContentOne{
+    margin-top: 100px;
+    min-width: 70%;
+  }
+  
+  .singlePropertyContentTwo {
+    width: 100%;
+    margin: 0 auto;
+ 
+    padding: 0;
+  }
+}
+
+@media (max-width: 481px){
+  .singlePropertyHead .featureImageWrapper{
+    width: 100%;
+  }
+  .singlePropertyFeature {
+    min-width: 100%;
+    /* order: 2;  */
+  }
+  .singlePropertyContentOne{
+ 
+    min-width: 70%;
+  }
+}

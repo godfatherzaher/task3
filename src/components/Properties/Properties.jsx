@@ -1,123 +1,139 @@
 import Box from '../Box/Box';
 import InfoSection from '../InfoSection/InfoSection';
 import styles from './Properties.module.css';
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import React, { useState } from 'react'
+import properties from '../../data/propertiesData';
+const Properties = ({ showSubtitle,showFilter }) => {
 
-const Properties = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const propertyDetails = [
-    {
-    Bedroom: '8',
-    Bathroom: '8',
-    Area: '545m2',
-    Floor: '3',
-    Parking: '6 spots'
-  },
-    {
-    Bedroom: '6',
-    Bathroom: '5',
-    Area: '450m2',
-    Floor: '3',
-    Parking: '8 spots'
-  },
-    {
-    Bedroom: '5',
-    Bathroom: '4',
-    Area: '225m2',
-    Floor: '3',
-    Parking: '10 spots'
-  },
-    {
-    Bedroom: '4',
-    Bathroom: '3',
-    Area: '125m2',
-    Floor: '25th',
-    Parking: '2 cars'
-  },
-  {
-    Bedroom: '4',
-    Bathroom: '4',
-    Area: '180m2',
-    Floor: '38th',
-    Parking: '2 cars'
-  },
-  {
-    Bedroom: '3',
-    Bathroom: '2',
-    Area: '165m2',
-    Floor: '26th',
-    Parking: '3 cars'
-  },
-]
+ 
+
+
+  const handleFilterClick = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    
+    
+  };
+
+  const filteredProperties = properties.filter(property => {
+    if (selectedCategory === 'all') return true;
+    return property.title.toLowerCase() === selectedCategory.toLowerCase();
+  });
+  
+  const renderPageContent = () => {
+    switch (currentPage) {
+      case 1:
+        return filteredProperties.slice(0, 9).map((property, index) => (
+          <Box
+            key={index}
+            imageSrc={property.imageSrc}
+            title={property.title}
+            price={property.price}
+            location={property.location}
+            details={property.details}
+            buttonIcon={false}
+          />
+        ));
+      case 2:
+        return filteredProperties.slice(9, 11).map((property, index) => (
+          <Box
+            key={index}
+            imageSrc={property.imageSrc}
+            title={property.title}
+            price={property.price}
+            location={property.location}
+            details={property.details}
+            buttonIcon={false}
+          />
+        ));
+     
+      default:
+        return null;
+    }
+  };
+
+
 
 
 
 
 
   return (
-    <div className={styles.propertiesContainer}>
-        <div className={styles.textBlock}>
-            <p className={styles.singleWord}>
-                <InfoSection
-                subtitle="Properties"
-                />
-            </p>
-           
-            <h1 className={styles.fourWords}>We Provide The Best Property You Like</h1>
-            <div className={styles.boxContainer}>
-            <Box
-                imageSrc="/assets/images/property-01.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[0]}
-                buttonIcon={false}
-            />
-            <Box
-                imageSrc="/assets/images/property-02.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[1]}
-                buttonIcon={false}
-            />
-            <Box
-                imageSrc="/assets/images/property-03.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[1]}
-                buttonIcon={false}
-            />
-            <Box
-                imageSrc="/assets/images/property-04.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[1]}
-                buttonIcon={false}
-            />
-            <Box
-                imageSrc="/assets/images/property-05.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[1]}
-                buttonIcon={false}
-            />
-            <Box
-                imageSrc="/assets/images/property-06.jpg"
-                title="Luxury Villa"
-                price="$2.264.000"
-                location="18 New Street Miami, OR 97219"
-                details={propertyDetails[1]}
-                buttonIcon={false}
-            />
-            </div>
-            
-          
+    <div className={styles.propertiesContainer} id="properties">
+      <div className={styles.textBlock}>
+        { showSubtitle  && ( <p className={styles.singleWord}>
+          <InfoSection subtitle="Properties" />
+        </p>    )}
+        { showSubtitle && ( <h1 className={styles.fourWords}>We Provide The Best Property You Like</h1>)}
+         { showFilter && <div className={styles.rectanglesContainer}>
+            <button 
+                className={`${styles.rectangle} ${selectedCategory === 'all' ? styles.active : ''}`}
+                 onClick={() => handleFilterClick('all')}
+             >
+             show all
+            </button>
+            <button 
+                  className={`${styles.rectangle} ${selectedCategory === 'Apartment' ? styles.active : ''}`}
+                  onClick={() => handleFilterClick('Apartment')}
+            > 
+              Apartment
+            </button>
+            <button 
+                      className={`${styles.rectangle} ${selectedCategory === 'Luxury Villa' ? styles.active : ''}`} 
+                      onClick={() => handleFilterClick('Luxury Villa')}
+            > 
+              Villad House
+             </button>
+            <button 
+                        className={`${styles.rectangle} ${selectedCategory === 'Penthouse' ? styles.active : ''}`}
+                        onClick={() => handleFilterClick('Penthouse')}
+            >
+               Penthouse
+             </button>
+          </div>}
+        
+        <div className={styles.boxContainer}>
+         {renderPageContent()}
+        </div>
+
+  
+       { showFilter && <div className={styles.navigationContainer}>
+
+        <div className={styles.dotsContainer}>
+          <button 
+              className={`${styles.circleButton} ${currentPage == 1 ?styles.active:"" } `} 
+              onClick={() => handlePageChange(1)}
+           >
+            1
+          </button>
+          <button 
+                  className={`${styles.circleButton} ${currentPage == 2 ?styles.active:"" } `} 
+                  onClick={() => handlePageChange(2)}
+            >
+            2
+            </button>
+          <button 
+               className={`${styles.circleButton} ${currentPage == 3 ?styles.active:"" } `} 
+               onClick={() => handlePageChange(3)}
+          >
+            3
+          </button>
+        </div>
+        <button className={styles.arrowButton}><MdKeyboardDoubleArrowRight /></button>
+      </div>}
+
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Properties
+export default Properties;

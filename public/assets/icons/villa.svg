@@ -1,0 +1,18 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="80"
+  height="80"
+  viewBox="0 0 32 32"
+>
+  <text
+    x="16"
+    y="30"
+    text-anchor="middle"
+    font-size="100"
+    font-family="Arial"
+    fill="#f35525"
+    
+  >
+    V
+  </text>
+</svg>
